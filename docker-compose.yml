@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres
+    container_name: tcc-db
+    restart: "no"
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=tcc
+      - POSTGRES_PASSWORD=tcc
+      - POSTGRES_DB=tcc-db

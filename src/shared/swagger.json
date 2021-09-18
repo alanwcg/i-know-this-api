@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TCC API DOCS",
+    "description": "Api Documentation",
+    "version": "1.0.0",
+    "contact": {
+      "email": "alancintra7@gmail.com, tukmax@gmail.com, cgsalbuquerque@gmail.com"
+    }
+  }
+}
