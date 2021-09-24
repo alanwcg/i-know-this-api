@@ -11,3 +11,9 @@ services:
       - POSTGRES_USER=tcc
       - POSTGRES_PASSWORD=tcc
       - POSTGRES_DB=tcc-db
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
