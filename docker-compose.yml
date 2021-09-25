@@ -6,7 +6,7 @@ services:
     container_name: tcc-db
     restart: "no"
     ports:
-      - 5432:5432
+      - 5433:5432
     environment:
       - POSTGRES_USER=tcc
       - POSTGRES_PASSWORD=tcc

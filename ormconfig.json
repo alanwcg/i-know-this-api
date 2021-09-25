@@ -1,6 +1,6 @@
 {
   "type": "postgres",
-  "port": 5432,
+  "port": 5433,
   "host": "localhost",
   "username": "tcc",
   "password": "tcc",

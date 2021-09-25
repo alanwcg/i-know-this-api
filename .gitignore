@@ -116,3 +116,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#docker
+docker-compose.yml
+
+#ormconfig
+ormconfig.json
