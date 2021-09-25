@@ -4,9 +4,14 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import { UserQuiz } from './UserQuiz';
+import { UserTechnology } from './UserTechnology';
+import { UserToken } from './UserToken';
 
 @Entity('user')
 export class User {
@@ -37,4 +42,15 @@ export class User {
   @Exclude()
   @DeleteDateColumn()
   deleted_at: Date;
+
+  @OneToMany(() => UserToken, userToken => userToken.user)
+  userTokens: UserToken[];
+
+  @OneToMany(() => UserTechnology, userTechnology => userTechnology.user, {
+    eager: true,
+  })
+  userTechnologies: UserTechnology[];
+
+  @OneToMany(() => UserQuiz, userQuiz => userQuiz.user)
+  userQuizzes: UserQuiz[];
 }
