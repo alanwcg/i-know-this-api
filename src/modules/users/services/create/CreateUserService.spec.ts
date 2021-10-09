@@ -1,4 +1,4 @@
-import { BCryptHashProvider } from '@modules/users/providers/implementations/BCryptHashProvider';
+import { BCryptHashProvider } from '@modules/users/providers/HashProvider/implementations/BCryptHashProvider';
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository';
 import { AppError } from '@shared/errors/AppError';
 

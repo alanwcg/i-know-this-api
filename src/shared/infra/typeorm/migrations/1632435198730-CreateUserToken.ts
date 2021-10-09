@@ -18,8 +18,8 @@ export class CreateUserToken1632435198730 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'expires_date',
-            type: 'timestamp',
+            name: 'expiration_date',
+            type: 'timestamp with time zone',
           },
           {
             name: 'user_id',

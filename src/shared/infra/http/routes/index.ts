@@ -1,7 +1,9 @@
 import { Router } from 'express';
 
+import { sessionsRouter } from '@modules/users/infra/http/routes/sessions.routes';
 import { usersRouter } from '@modules/users/infra/http/routes/users.routes';
 
-export const routes = Router();
+export const router = Router();
 
-routes.use('/users', usersRouter);
+router.use('/users', usersRouter);
+router.use('/sessions', sessionsRouter);

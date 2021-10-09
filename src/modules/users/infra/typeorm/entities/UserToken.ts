@@ -21,7 +21,7 @@ export class UserToken {
   refresh_token: string;
 
   @Column('timestamp with time zone')
-  expires_date: Date;
+  expiration_date: Date;
 
   @Column('uuid')
   user_id: string;

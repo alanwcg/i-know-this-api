@@ -1,4 +1,3 @@
-import { hash } from 'bcrypt';
 import request from 'supertest';
 import { Connection } from 'typeorm';
 
@@ -11,12 +10,6 @@ describe('Create User Controller', () => {
   beforeAll(async () => {
     connection = await getConnection();
     await connection.runMigrations();
-
-    const password = await hash('admin', 10);
-
-    await connection.query(
-      `INSERT INTO "user"(name, email, password) values('admin', 'admin@admin.com', '${password}')`,
-    );
   });
 
   afterAll(async () => {

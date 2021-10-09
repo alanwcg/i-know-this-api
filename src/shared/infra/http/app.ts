@@ -12,7 +12,7 @@ import { AppError } from '@shared/errors/AppError';
 import swaggerFile from '@shared/swagger.json';
 
 import { getConnection } from '../typeorm';
-import { routes } from './routes';
+import { router } from './routes';
 
 getConnection();
 
@@ -22,10 +22,10 @@ app.use(cors());
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.use(routes);
+app.use(router);
 
 app.get('/', (request: Request, response: Response) => {
-  return response.json({ message: 'TCC API' });
+  return response.json({ message: 'I Know This API' });
 });
 
 app.use(errors());

@@ -28,6 +28,7 @@ export class User {
   @Column()
   password: string;
 
+  @Exclude()
   @Column()
   avatar: string;
 
@@ -46,9 +47,7 @@ export class User {
   @OneToMany(() => UserToken, userToken => userToken.user)
   userTokens: UserToken[];
 
-  @OneToMany(() => UserTechnology, userTechnology => userTechnology.user, {
-    eager: true,
-  })
+  @OneToMany(() => UserTechnology, userTechnology => userTechnology.user)
   userTechnologies: UserTechnology[];
 
   @OneToMany(() => UserQuiz, userQuiz => userQuiz.user)
