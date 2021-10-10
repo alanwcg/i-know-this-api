@@ -1,27 +1,20 @@
 import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
-import { CreateUserController } from '@modules/users/services/create/CreateUserController';
+export const levelRouter = Router();
 
-export const usersRouter = Router();
-
-const createUserController = new CreateUserController();
-
-usersRouter.post(
+levelRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
-      email: Joi.string().required(),
-      password: Joi.string().required(),
+      description: Joi.string(),
     },
   }),
-  createUserController.handle,
 );
+levelRouter.get('/:id');
 
-usersRouter.get('/');
-
-usersRouter.get(
+levelRouter.get(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -30,7 +23,7 @@ usersRouter.get(
   }),
 );
 
-usersRouter.put(
+levelRouter.put(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -38,13 +31,12 @@ usersRouter.put(
     },
     [Segments.BODY]: {
       name: Joi.string(),
-      email: Joi.string(),
-      password: Joi.string(),
+      description: Joi.string(),
     },
   }),
 );
 
-usersRouter.delete(
+levelRouter.delete(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {

@@ -1,27 +1,20 @@
 import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
-import { CreateUserController } from '@modules/users/services/create/CreateUserController';
+export const technologyRouter = Router();
 
-export const usersRouter = Router();
-
-const createUserController = new CreateUserController();
-
-usersRouter.post(
+technologyRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
-      email: Joi.string().required(),
-      password: Joi.string().required(),
+      description: Joi.string(),
     },
   }),
-  createUserController.handle,
 );
+technologyRouter.get('/:id');
 
-usersRouter.get('/');
-
-usersRouter.get(
+technologyRouter.get(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -30,21 +23,20 @@ usersRouter.get(
   }),
 );
 
-usersRouter.put(
+technologyRouter.put(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
     },
     [Segments.BODY]: {
-      name: Joi.string(),
-      email: Joi.string(),
-      password: Joi.string(),
+      name: Joi.string().required(),
+      description: Joi.string(),
     },
   }),
 );
 
-usersRouter.delete(
+technologyRouter.delete(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
