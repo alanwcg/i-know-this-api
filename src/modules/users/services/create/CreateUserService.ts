@@ -1,4 +1,3 @@
-import { classToClass } from 'class-transformer';
 import { inject, injectable } from 'tsyringe';
 
 import { User } from '@modules/users/infra/typeorm/entities/User';
@@ -37,6 +36,6 @@ export class CreateUserService {
       password: hashedPassword,
     });
 
-    return classToClass(user);
+    return user;
   }
 }

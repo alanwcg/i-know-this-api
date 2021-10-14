@@ -1,4 +1,3 @@
-import { ICreateUserDTO } from '@modules/users/dtos/ICreateUserDTO';
 import { BCryptHashProvider } from '@modules/users/providers/HashProvider/implementations/BCryptHashProvider';
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider';
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository';
@@ -45,17 +44,15 @@ describe('Refresh Token Service', () => {
   });
 
   it('should be able to refresh user token', async () => {
-    const user: ICreateUserDTO = {
+    const user = await createUserService.execute({
       name: 'User',
       email: 'user@test.com',
       password: '123456',
-    };
-
-    await createUserService.execute(user);
+    });
 
     const session = await authenticateUserService.execute({
       email: user.email,
-      password: user.password,
+      password: '123456',
     });
 
     const result = await refreshTokenService.execute(session.refresh_token);
@@ -64,13 +61,9 @@ describe('Refresh Token Service', () => {
     expect(result).toHaveProperty('refresh_token');
   });
 
-  it('should not be able to refresh invalid user token', async () => {
+  it('should not be able to refresh user token with invalid or expired refresh_token', async () => {
     await expect(
-      refreshTokenService.execute('invalid refresh_token'),
-    ).rejects.toEqual(new AppError('Refresh Token não encontrado!'));
+      refreshTokenService.execute('invalid/expired refresh_token'),
+    ).rejects.toEqual(new AppError('Refresh Token inválido', 401));
   });
-
-  // it('should not be able to refresh expired user token', async () => {
-  // TODO:Test expired refresh token
-  // });
 });

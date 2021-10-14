@@ -38,8 +38,8 @@
     "/sessions": {
       "post": {
         "tags": ["Session"],
-        "summary": "Authenticate User",
-        "description": "Authenticate User",
+        "summary": "Authenticate",
+        "description": "Authenticate",
         "requestBody": {
           "content": {
             "application/json": {
@@ -63,6 +63,35 @@
           },
           "401": {
             "description": "Incorrect e-mail or password"
+          }
+        }
+      }
+    },
+    "/sessions/refresh-token": {
+      "post": {
+        "tags": ["Session"],
+        "summary": "Refresh Token",
+        "description": "Refresh Token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "refresh_token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Invalid Refresh Token"
           }
         }
       }

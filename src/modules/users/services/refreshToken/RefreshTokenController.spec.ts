@@ -39,12 +39,12 @@ describe('Refresh Token Controller', () => {
     expect(response.body).toHaveProperty('refresh_token');
   });
 
-  it('should not be able to refresh invalid user token', async () => {
+  it('should not be able to refresh user token with invalid or expired refresh_token', async () => {
     const response = await request(app).post('/sessions/refresh-token').send({
-      refresh_token: 'invalid refresh_token',
+      refresh_token: 'nonexistent refresh_token',
     });
 
-    expect(response.status).toBe(404);
-    expect(response.body.message).toBe('Refresh Token não encontrado!');
+    expect(response.status).toBe(401);
+    expect(response.body.message).toBe('Refresh Token inválido');
   });
 });
