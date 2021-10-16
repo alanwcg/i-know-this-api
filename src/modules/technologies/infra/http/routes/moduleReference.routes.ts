@@ -1,6 +1,18 @@
 import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
+import { CreateModuleReferenceController } from '@modules/technologies/services/moduleReference/create/CreateModuleReferenceController';
+import { DeleteModuleReferenceController } from '@modules/technologies/services/moduleReference/delete/DeleteModuleReferenceController';
+import { DetailModuleReferenceController } from '@modules/technologies/services/moduleReference/detail/DetailModuleReferenceController';
+import { ListModuleReferenceController } from '@modules/technologies/services/moduleReference/list/ListModuleReferenceController';
+import { UpdateModuleReferenceController } from '@modules/technologies/services/moduleReference/update/UpdateModuleReferenceController';
+
+const createModuleReferenceController = new CreateModuleReferenceController();
+const listModuleReferenceController = new ListModuleReferenceController();
+const detailModuleReferenceController = new DetailModuleReferenceController();
+const updateModuleReferenceController = new UpdateModuleReferenceController();
+const deleteModuleReferenceController = new DeleteModuleReferenceController();
+
 export const moduleReferenceRouter = Router();
 
 moduleReferenceRouter.post(
@@ -12,9 +24,10 @@ moduleReferenceRouter.post(
       module_id: Joi.string().uuid().required(),
     },
   }),
+  createModuleReferenceController.handle,
 );
 
-moduleReferenceRouter.get('/:id');
+moduleReferenceRouter.get('/', listModuleReferenceController.handle);
 
 moduleReferenceRouter.get(
   '/:id',
@@ -23,6 +36,7 @@ moduleReferenceRouter.get(
       id: Joi.string().uuid().required(),
     },
   }),
+  detailModuleReferenceController.handle,
 );
 
 moduleReferenceRouter.put(
@@ -37,6 +51,7 @@ moduleReferenceRouter.put(
       module_id: Joi.string().uuid(),
     },
   }),
+  updateModuleReferenceController.handle,
 );
 
 moduleReferenceRouter.delete(
@@ -46,4 +61,5 @@ moduleReferenceRouter.delete(
       id: Joi.string().uuid().required(),
     },
   }),
+  deleteModuleReferenceController.handle,
 );
