@@ -44,3 +44,22 @@ questionRouter.delete(
     },
   }),
 );
+
+// TODO revisar rota de busca de questões por tecnologia e modulo
+questionRouter.get(
+  '/technology/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+);
+
+questionRouter.get(
+  '/module/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+);
