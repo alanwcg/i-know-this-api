@@ -45,6 +45,10 @@ export class RefreshTokenService {
           refresh_token,
         );
 
+      // if (!userToken) {
+      //   throw new AppError('Refresh Token não encontrado!', 404);
+      // }
+
       await this.usersTokensRepository.delete(userToken.id);
 
       const newToken = sign({}, token_secret, {
