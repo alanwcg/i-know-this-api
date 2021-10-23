@@ -23,7 +23,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
 app.use('/avatar', express.static(`${upload.tmpFolder}/avatar`));
 
 app.use(router);

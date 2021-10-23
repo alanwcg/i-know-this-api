@@ -1,4 +1,3 @@
-import { ICreateUserDTO } from '@modules/users/dtos/ICreateUserDTO';
 import { BCryptHashProvider } from '@modules/users/providers/HashProvider/implementations/BCryptHashProvider';
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider';
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository';
@@ -39,17 +38,15 @@ describe('Authenticate User Service', () => {
   });
 
   it('should be able to authenticate an user', async () => {
-    const user: ICreateUserDTO = {
+    const user = await createUserService.execute({
       name: 'User',
       email: 'user@test.com',
       password: '123456',
-    };
-
-    await createUserService.execute(user);
+    });
 
     const result = await authenticateUserService.execute({
       email: user.email,
-      password: user.password,
+      password: '123456',
     });
 
     expect(result).toHaveProperty('user');
@@ -67,13 +64,11 @@ describe('Authenticate User Service', () => {
   });
 
   it('should not be able to authenticate with incorret password', async () => {
-    const user: ICreateUserDTO = {
+    const user = await createUserService.execute({
       name: 'User',
       email: 'user@test.com',
       password: '123456',
-    };
-
-    await createUserService.execute(user);
+    });
 
     await expect(
       authenticateUserService.execute({
