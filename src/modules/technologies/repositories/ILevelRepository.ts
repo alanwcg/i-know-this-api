@@ -4,9 +4,9 @@ import { Level } from '../infra/typeorm/entities/Level';
 
 export interface ILevelRepository {
   findAll(): Promise<Level[]>;
-  findById(id): Promise<Level | undefined>;
+  findById(id: string): Promise<Level | undefined>;
   update(data: IUpdateLevelDto): Promise<Level | undefined>;
-  findByName(name): Promise<Level | undefined>;
+  findByName(name: string): Promise<Level | undefined>;
   create(data: ICreateLevelDto): Promise<Level>;
-  delete(id): Promise<void>;
+  delete(id: string): Promise<void>;
 }

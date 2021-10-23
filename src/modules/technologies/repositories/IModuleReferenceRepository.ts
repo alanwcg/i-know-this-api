@@ -4,9 +4,9 @@ import { ModuleReference } from '../infra/typeorm/entities/ModuleReference';
 
 export interface IModuleReferenceRepository {
   findAll(): Promise<ModuleReference[]>;
-  findById(id): Promise<ModuleReference | undefined>;
+  findById(id: string): Promise<ModuleReference | undefined>;
   update(data: IUpdateModuleReferenceDto): Promise<ModuleReference | undefined>;
-  findByTitle(title): Promise<ModuleReference | undefined>;
+  findByTitle(title: string): Promise<ModuleReference | undefined>;
   create(data: ICreateModuleReferenceDto): Promise<ModuleReference>;
-  delete(id): Promise<void>;
+  delete(id: string): Promise<void>;
 }

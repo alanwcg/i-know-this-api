@@ -4,9 +4,9 @@ import { Module } from '../infra/typeorm/entities/Module';
 
 export interface IModuleRepository {
   findAll(): Promise<Module[]>;
-  findById(id): Promise<Module | undefined>;
+  findById(id: string): Promise<Module | undefined>;
   update(data: IUpdateModuleDto): Promise<Module | undefined>;
-  findByName(name): Promise<Module | undefined>;
+  findByName(name: string): Promise<Module | undefined>;
   create(data: ICreateModuleDto): Promise<Module>;
-  delete(id): Promise<void>;
+  delete(id: string): Promise<void>;
 }

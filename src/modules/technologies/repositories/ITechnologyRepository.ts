@@ -4,9 +4,9 @@ import { Technology } from '../infra/typeorm/entities/Technology';
 
 export interface ITechnologyRepository {
   findAll(): Promise<Technology[]>;
-  findById(id): Promise<Technology | undefined>;
+  findById(id: string): Promise<Technology | undefined>;
   update(data: IUpdateTechnologyDto): Promise<Technology | undefined>;
-  findByName(name): Promise<Technology | undefined>;
+  findByName(name: string): Promise<Technology | undefined>;
   create(data: ICreateTechnologyDto): Promise<Technology>;
-  delete(id): Promise<void>;
+  delete(id: string): Promise<void>;
 }
