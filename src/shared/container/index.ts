@@ -3,6 +3,8 @@ import { container } from 'tsyringe';
 import '@modules/users/providers/HashProvider';
 import './providers';
 
+import { QuestionsRepository } from '@modules/quizzes/infra/typeorm/repositories/QuestionsRepository';
+import { IQuestionsRepository } from '@modules/quizzes/repositories/IQuestionsRepository';
 import { UsersRepository } from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import { UsersTokensRepository } from '@modules/users/infra/typeorm/repositories/UsersTokensRepository';
 import { IUsersRepository } from '@modules/users/repositories/IUsersRepository';
@@ -16,4 +18,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IUsersTokensRepository>(
   'UsersTokensRepository',
   UsersTokensRepository,
+);
+
+container.register<IQuestionsRepository>(
+  'QuestionsRepository',
+  QuestionsRepository,
 );

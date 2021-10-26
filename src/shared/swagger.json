@@ -301,7 +301,34 @@
           }
         }
       }
-    }
+    },
+        "/questions": {
+          "post": {
+            "tags": [
+              "Question"
+            ],
+            "summary": "Create Question",
+            "description": "Create a new Question",
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/definitions/Question"
+                  },
+                  "example": {
+                    "text": "Questão de teste",
+                    "module_id": "8e23af72-12f1-4179-8ac9-46dc624659ea"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description": "Created"
+              }
+            }
+          }
+        }
   },
   "definitions": {
     "User": {

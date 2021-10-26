@@ -1,12 +1,16 @@
 {
   "type": "postgres",
-  "port": 5432,
+  "port": 5433,
   "host": "localhost",
   "username": "tcc",
   "password": "tcc",
   "database": "tcc-db",
-  "entities": ["./src/modules/**/entities/*.ts"],
-  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+  "entities": [
+    "./src/modules/**/entities/*.ts"
+  ],
+  "migrations": [
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
   "cli": {
     "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }

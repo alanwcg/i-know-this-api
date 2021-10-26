@@ -1,9 +1,13 @@
 import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
-export const questionRouter = Router();
+import { CreateQuestionController } from '@modules/quizzes/services/questions/create/CreateQuestionController';
 
-questionRouter.post(
+export const questionsRouter = Router();
+
+const createQuestionController = new CreateQuestionController();
+
+questionsRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
@@ -11,10 +15,11 @@ questionRouter.post(
       module_id: Joi.string().uuid().required(),
     },
   }),
+  createQuestionController.handle,
 );
-questionRouter.get('/:id');
+questionsRouter.get('/:id');
 
-questionRouter.get(
+questionsRouter.get(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -23,7 +28,7 @@ questionRouter.get(
   }),
 );
 
-questionRouter.put(
+questionsRouter.put(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -36,7 +41,7 @@ questionRouter.put(
   }),
 );
 
-questionRouter.delete(
+questionsRouter.delete(
   '/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -46,7 +51,7 @@ questionRouter.delete(
 );
 
 // TODO revisar rota de busca de questões por tecnologia e modulo
-questionRouter.get(
+questionsRouter.get(
   '/technology/:id',
   celebrate({
     [Segments.PARAMS]: {
@@ -55,7 +60,7 @@ questionRouter.get(
   }),
 );
 
-questionRouter.get(
+questionsRouter.get(
   '/module/:id',
   celebrate({
     [Segments.PARAMS]: {
