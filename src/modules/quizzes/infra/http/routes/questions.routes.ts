@@ -17,7 +17,6 @@ questionsRouter.post(
   }),
   createQuestionController.handle,
 );
-questionsRouter.get('/:id');
 
 questionsRouter.get(
   '/:id',

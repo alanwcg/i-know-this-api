@@ -6,7 +6,7 @@ import { ILevelRepository } from '@modules/technologies/repositories/ILevelRepos
 
 import { Level } from '../entities/Level';
 
-export class repository implements ILevelRepository {
+export class LevelRepository implements ILevelRepository {
   private repository: Repository<Level>;
 
   constructor() {
