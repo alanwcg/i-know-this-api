@@ -19,7 +19,7 @@ moduleRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
-      name: Joi.string().required().required(),
+      name: Joi.string().required(),
       description: Joi.string(),
       content: Joi.string(),
       level_id: Joi.string().uuid().required(),
@@ -28,6 +28,7 @@ moduleRouter.post(
   }),
   createModuleController.handle,
 );
+
 moduleRouter.get('/', listModuleController.handle);
 
 moduleRouter.get(

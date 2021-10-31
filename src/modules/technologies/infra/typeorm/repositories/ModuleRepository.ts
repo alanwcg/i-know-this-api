@@ -25,7 +25,7 @@ export class ModuleRepository implements IModuleRepository {
     return updated;
   }
   async findByName(name: string): Promise<Module> {
-    const item = await this.repository.findOne(name);
+    const item = await this.repository.findOne({ name });
     return item;
   }
   async create(data: ICreateModuleDto): Promise<Module> {
