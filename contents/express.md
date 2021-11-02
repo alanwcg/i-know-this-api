@@ -25,15 +25,15 @@ Por exemplo: você poderá usar o Express para fazer todo o processo de criaçã
 ------
 ### Why should you use?
 ------
-## Topics by level
+## Modules by level
 - Junior
- - [ ] install?
- - [ ] Hello World
- - [ ] routing
+ - [ ] Instalação e Hello World
+ - [ ] Roteamento básico
+ - [ ] Arquivos estáticos
 -----
-- Mid
- - [ ] middleware
- - [ ] errors
+- Pleno
+ - [ ] Middleware
+ - [ ] Errors
 -----
 - Senior
  - [ ] debugging
