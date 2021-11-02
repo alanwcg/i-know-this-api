@@ -1,0 +1,14 @@
+[
+  {
+    "name": "junior",
+    "description": "junior level - 01"
+  },
+  {
+    "name": "pleno",
+    "description": "pleno (middle) level - 02"
+  },
+  {
+    "name": "senior",
+    "description": "senior level - 03"
+  }
+]
