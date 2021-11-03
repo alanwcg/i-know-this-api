@@ -10,7 +10,7 @@ const authenticateUserController = new AuthenticateUserController();
 const refreshTokenController = new RefreshTokenController();
 
 sessionsRouter.post(
-  '/',
+  '/authenticate',
   celebrate({
     [Segments.BODY]: {
       email: Joi.string().required(),

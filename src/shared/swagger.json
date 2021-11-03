@@ -159,7 +159,7 @@
         }
       }
     },
-    "/sessions": {
+    "/sessions/authenticate": {
       "post": {
         "tags": ["Session"],
         "summary": "Authenticate",
