@@ -1,14 +1,20 @@
-import { getConnection } from '../..';
-import levelJSON from './level.json';
+import { EntityManager } from 'typeorm';
 
-export async function PopulateLevel(): Promise<void> {
-  const connection = await getConnection();
+import { ICreateLevelDto } from '@modules/technologies/dto/ICreateLevelDto';
 
-  for (const level of levelJSON) {
-    await connection.query(
-      `INSERT INTO level (id, name, description) VALUES (${level.id} ${level.name}, ${level.description})`,
-    );
+import { levels } from './level';
+
+interface ILevel extends ICreateLevelDto {
+  id: string;
+}
+
+const levelQuery = (level: ILevel) =>
+  `INSERT INTO level (id, name, description) VALUES ('${level.id}', '${level.name}', '${level.description}')`;
+
+export async function PopulateLevel(
+  transactionalEntityManager: EntityManager,
+): Promise<void> {
+  for (const level of levels) {
+    await transactionalEntityManager.query(levelQuery(level));
   }
-
-  await connection.close();
 }

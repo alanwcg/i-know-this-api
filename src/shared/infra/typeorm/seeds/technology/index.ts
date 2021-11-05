@@ -1,14 +1,20 @@
-import { getConnection } from '../..';
-import technologyJSON from './express.json';
+import { EntityManager } from 'typeorm';
 
-export async function PopulateTechnology(): Promise<void> {
-  const connection = await getConnection();
+import { ICreateTechnologyDto } from '@modules/technologies/dto/ICreateTechnologyDto';
 
-  for (const technology of technologyJSON) {
-    await connection.query(
-      `INSERT INTO technology (id, name, description) VALUES (${technology.id} ${technology.name}, ${technology.description})`,
-    );
+import { technologies } from './technology';
+
+interface ITechnology extends ICreateTechnologyDto {
+  id: string;
+}
+
+const technologyQuery = (technology: ITechnology) =>
+  `INSERT INTO technology (id, name, description) VALUES ('${technology.id}', '${technology.name}', '${technology.description}')`;
+
+export async function PopulateTechnology(
+  transactionalEntityManager: EntityManager,
+): Promise<void> {
+  for (const technology of technologies) {
+    await transactionalEntityManager.query(technologyQuery(technology));
   }
-
-  await connection.close();
 }

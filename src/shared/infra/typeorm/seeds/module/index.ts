@@ -1,14 +1,20 @@
-import { getConnection } from '../..';
-import moduleJSON from './modules';
+import { EntityManager } from 'typeorm';
 
-export async function PopulateModule(): Promise<void> {
-  const connection = await getConnection();
+import { ICreateModuleDto } from '@modules/technologies/dto/ICreateModuleDto';
 
-  for (const module of moduleJSON) {
-    await connection.query(
-      `INSERT INTO module (id, name, description) VALUES (${module.id} ${module.name}, ${module.description})`,
-    );
+import { modules } from './modules';
+
+interface IModule extends ICreateModuleDto {
+  id: string;
+}
+
+const moduleQuery = (module: IModule) =>
+  `INSERT INTO module (id, name, description, content) VALUES ('${module.id}', '${module.name}', '${module.description}', '${module.content}' )`;
+
+export async function PopulateModule(
+  transactionalEntityManager: EntityManager,
+): Promise<void> {
+  for (const module of modules) {
+    await transactionalEntityManager.query(moduleQuery(module));
   }
-
-  await connection.close();
 }
