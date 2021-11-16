@@ -32,6 +32,9 @@ export class Module {
   @Column('text')
   content: string;
 
+  @Column('text')
+  links: string;
+
   @Column('uuid')
   level_id: string;
 

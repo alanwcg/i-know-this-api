@@ -11,8 +11,8 @@ import { PopulateTechnology } from './technology';
 
 const populateMethodsArray = (transactionalEntityManager: EntityManager) => [
   PopulateLevel(transactionalEntityManager),
-  PopulateModule(transactionalEntityManager),
   PopulateTechnology(transactionalEntityManager),
+  PopulateModule(transactionalEntityManager),
 ];
 
 const generateEntityManager = async () => {
@@ -41,8 +41,8 @@ async function runSeed() {
     })
     .catch(async error => {
       await queryRunner.rollbackTransaction();
-      console.log('Erro ao popular o banco de dados');
-      throw error;
+      console.log('\nErro ao popular o banco de dados:\n', error);
+      // throw error;
     })
     .finally(async () => {
       await queryRunner.release();

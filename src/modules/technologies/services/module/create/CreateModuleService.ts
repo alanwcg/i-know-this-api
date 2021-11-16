@@ -16,6 +16,7 @@ export class CreateModuleService {
     name,
     description,
     content,
+    links,
     level_id,
     technology_id,
   }: ICreateModuleDto): Promise<Module> {
@@ -29,6 +30,7 @@ export class CreateModuleService {
       name,
       description,
       content,
+      links,
       level_id,
       technology_id,
     });

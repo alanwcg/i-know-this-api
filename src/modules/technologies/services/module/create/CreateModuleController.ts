@@ -6,7 +6,7 @@ import { CreateModuleService } from './CreateModuleService';
 
 export class CreateModuleController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, description, content, level_id, technology_id } =
+    const { name, description, content, links, level_id, technology_id } =
       request.body;
 
     const service = container.resolve(CreateModuleService);
@@ -15,6 +15,7 @@ export class CreateModuleController {
       name,
       description,
       content,
+      links,
       level_id,
       technology_id,
     });

@@ -36,6 +36,11 @@ export class CreateModule1632435607172 implements MigrationInterface {
             isNullable: true,
           },
           {
+            name: 'links',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
