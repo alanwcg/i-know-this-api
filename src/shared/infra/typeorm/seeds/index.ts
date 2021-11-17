@@ -7,12 +7,16 @@ import { getConnection } from '..';
 
 import { PopulateLevel } from './level';
 import { PopulateModule } from './module';
+import { PopulateQuestion } from './question';
 import { PopulateTechnology } from './technology';
 
-const populateMethodsArray = (transactionalEntityManager: EntityManager) => [
-  PopulateLevel(transactionalEntityManager),
-  PopulateTechnology(transactionalEntityManager),
-  PopulateModule(transactionalEntityManager),
+const populateMethodsArray = async (
+  transactionalEntityManager: EntityManager,
+) => [
+  await PopulateLevel(transactionalEntityManager),
+  await PopulateTechnology(transactionalEntityManager),
+  await PopulateModule(transactionalEntityManager),
+  await PopulateQuestion(transactionalEntityManager),
 ];
 
 const generateEntityManager = async () => {
@@ -33,7 +37,6 @@ const progressMessage = async (
 
 async function runSeed() {
   const { manager, queryRunner } = await generateEntityManager();
-
   await bluebirdPromise
     .mapSeries(populateMethodsArray(manager), progressMessage)
     .then(async () => {
