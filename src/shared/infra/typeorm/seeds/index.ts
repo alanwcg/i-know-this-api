@@ -7,7 +7,7 @@ import { getConnection } from '..';
 
 import { PopulateLevel } from './level';
 import { PopulateModule } from './module';
-import { PopulateQuestion } from './question';
+import { PopulateQuestionAndOption } from './question';
 import { PopulateTechnology } from './technology';
 
 const populateMethodsArray = async (
@@ -16,7 +16,7 @@ const populateMethodsArray = async (
   await PopulateLevel(transactionalEntityManager),
   await PopulateTechnology(transactionalEntityManager),
   await PopulateModule(transactionalEntityManager),
-  await PopulateQuestion(transactionalEntityManager),
+  await PopulateQuestionAndOption(transactionalEntityManager),
 ];
 
 const generateEntityManager = async () => {
