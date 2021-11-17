@@ -5,7 +5,6 @@ const modules = [
     description:
       'Nesse módulo será explicado o que é o estado de uma aplicação React',
     content: `
-# Componente
 Componentes são a ferramenta mais importante para o desenvolvimento de aplicações React. Para entender o conceito inicial, o componente é um trecho de código que abrange dentro dele estruturas de lógica, renderização e estilização. A parte lógica é criada utilizando o JavaScript, enquanto a parte de renderização é feita utilizando o HTML e JSX. Quando presente, a estilização é feita utilizando CSS.
 
 O que é o JSX?
@@ -68,9 +67,6 @@ Artigos de Blog
     description:
       'Nesse módulo será explicado o que é o estado de uma aplicação React',
     content: `
-  # Estado
-  -----
-
   O funcionamento de uma aplicação React é baseado em estados. Um estado é uma variável que poderá ser alterada durante o ciclo de execução da aplicação e essa poderá ser utilizada para atualizar a interface do usuário. Exemplificando: a aplicação pode salvar um valor de um input do usuário, como o seu nome, e ao clicar em um botão, o estado pode ser atualizado para mostrar o nome do usuário.
 
   Para que a aplicação entenda o uso do estado, é necessário utilizar do método
@@ -90,6 +86,7 @@ Artigos de Blog
     content: `
     # Imutabilidade
     -----
+    TODO
     `,
     links: `
       `,
@@ -104,6 +101,7 @@ Artigos de Blog
     content: `
     # Propriedades
     -----
+    TODO:
     `,
     links: `
       `,
@@ -117,6 +115,7 @@ Artigos de Blog
     content: `
     # CSS in JS
     -----
+    TODO
     `,
     links: `
       `,
@@ -130,6 +129,7 @@ Artigos de Blog
     content: `
     # Hooks
     -----
+    TODO
     `,
     links: `
       `,
@@ -143,6 +143,7 @@ Artigos de Blog
     content: `
     # Contexto
     -----
+    TODO
     `,
     links: `
       `,
@@ -156,6 +157,7 @@ Artigos de Blog
     content: `
     # Navegação
     -----
+    TODO
     `,
     links: `
       `,
@@ -169,6 +171,7 @@ Artigos de Blog
     content: `
     # Autenticação
     -----
+    TODO
     `,
     links: `
       `,
@@ -182,6 +185,7 @@ Artigos de Blog
     content: `
     # Interface declarativa
     -----
+    TODO
     `,
     links: `
       `,
@@ -195,6 +199,7 @@ Artigos de Blog
     content: `
     # Performance
     -----
+    TODO
     `,
     links: `
       `,
@@ -208,6 +213,7 @@ Artigos de Blog
     content: `
     # Performance
     -----
+    TODO
     `,
     links: `
       `,
@@ -221,6 +227,7 @@ Artigos de Blog
     content: `
     # Teste
     -----
+    TODO
     `,
     links: `
       `,
