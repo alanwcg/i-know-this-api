@@ -9,8 +9,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+import { UserModule } from './UserModule';
 import { UserQuiz } from './UserQuiz';
-import { UserTechnology } from './UserTechnology';
 import { UserToken } from './UserToken';
 
 @Entity('user')
@@ -63,8 +63,8 @@ export class User {
   @OneToMany(() => UserToken, userToken => userToken.user)
   userTokens: UserToken[];
 
-  @OneToMany(() => UserTechnology, userTechnology => userTechnology.user)
-  userTechnologies: UserTechnology[];
+  @OneToMany(() => UserModule, userModule => userModule.user)
+  userModules: UserModule[];
 
   @OneToMany(() => UserQuiz, userQuiz => userQuiz.user)
   userQuizzes: UserQuiz[];

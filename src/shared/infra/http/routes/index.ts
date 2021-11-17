@@ -6,6 +6,7 @@ import { moduleRouter } from '@modules/technologies/infra/http/routes/module.rou
 import { technologyRouter } from '@modules/technologies/infra/http/routes/technology.routes';
 import { passwordRouter } from '@modules/users/infra/http/routes/password.routes';
 import { sessionsRouter } from '@modules/users/infra/http/routes/sessions.routes';
+import { userModuleRouter } from '@modules/users/infra/http/routes/userModule.routes';
 import { usersRouter } from '@modules/users/infra/http/routes/users.routes';
 
 export const router = Router();
@@ -17,3 +18,4 @@ router.use('/questions', questionsRouter);
 router.use('/technologies', technologyRouter);
 router.use('/modules', moduleRouter);
 router.use('/levels', levelRouter);
+router.use('/users-modules', userModuleRouter);

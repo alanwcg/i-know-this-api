@@ -43,7 +43,7 @@ export class Question {
   @JoinColumn({ name: 'module_id' })
   module: Module;
 
-  @OneToMany(() => Option, option => option.question)
+  @OneToMany(() => Option, option => option.question, { eager: true })
   options: Option[];
 
   @OneToMany(() => UserQuiz, userQuiz => userQuiz.question)

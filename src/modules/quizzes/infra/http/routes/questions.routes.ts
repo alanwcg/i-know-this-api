@@ -2,10 +2,12 @@ import { celebrate, Joi, Segments } from 'celebrate';
 import { Router } from 'express';
 
 import { CreateQuestionController } from '@modules/quizzes/services/questions/create/CreateQuestionController';
+import { FindQuestionsController } from '@modules/quizzes/services/questions/findByModuleId/FindQuestionsController';
 
 export const questionsRouter = Router();
 
 const createQuestionController = new CreateQuestionController();
+const findQuestionsController = new FindQuestionsController();
 
 questionsRouter.post(
   '/',
@@ -16,6 +18,16 @@ questionsRouter.post(
     },
   }),
   createQuestionController.handle,
+);
+
+questionsRouter.get(
+  '/',
+  celebrate({
+    [Segments.QUERY]: {
+      module_id: Joi.string().uuid().allow(''),
+    },
+  }),
+  findQuestionsController.handle,
 );
 
 questionsRouter.get(

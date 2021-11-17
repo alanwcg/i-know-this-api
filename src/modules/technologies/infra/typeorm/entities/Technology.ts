@@ -9,8 +9,6 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { UserTechnology } from '@modules/users/infra/typeorm/entities/UserTechnology';
-
 import { Module } from './Module';
 
 @Entity('technology')
@@ -35,9 +33,6 @@ export class Technology {
   @Exclude()
   @DeleteDateColumn()
   deleted_at: Date;
-
-  @OneToMany(() => UserTechnology, userTechnology => userTechnology.technology)
-  userTechnologies: UserTechnology[];
 
   @OneToMany(() => Module, module => module.technology)
   modules: Module[];

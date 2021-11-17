@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateUserTechnology1632527990206 implements MigrationInterface {
+export class CreateUserModule1632527990206 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'user_technology',
+        name: 'user_module',
         columns: [
           {
             name: 'id',
@@ -13,20 +13,19 @@ export class CreateUserTechnology1632527990206 implements MigrationInterface {
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
           },
-
+          {
+            name: 'progression',
+            type: 'integer',
+          },
           {
             name: 'user_id',
             type: 'uuid',
             isNullable: true,
           },
           {
-            name: 'technology_id',
+            name: 'module_id',
             type: 'uuid',
             isNullable: true,
-          },
-          {
-            name: 'progression',
-            type: 'decimal',
           },
           {
             name: 'level_id',
@@ -51,7 +50,7 @@ export class CreateUserTechnology1632527990206 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: 'UserTechnologyUser',
+            name: 'UserModuleUser',
             columnNames: ['user_id'],
             referencedTableName: 'user',
             referencedColumnNames: ['id'],
@@ -59,15 +58,15 @@ export class CreateUserTechnology1632527990206 implements MigrationInterface {
             onDelete: 'SET NULL',
           },
           {
-            name: 'UserTechnologyTechnology',
-            columnNames: ['technology_id'],
-            referencedTableName: 'technology',
+            name: 'UserModuleModule',
+            columnNames: ['module_id'],
+            referencedTableName: 'module',
             referencedColumnNames: ['id'],
             onUpdate: 'CASCADE',
             onDelete: 'SET NULL',
           },
           {
-            name: 'UserTechnologyLevel',
+            name: 'UserModuleLevel',
             columnNames: ['level_id'],
             referencedTableName: 'level',
             referencedColumnNames: ['id'],
@@ -80,6 +79,6 @@ export class CreateUserTechnology1632527990206 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('user_technology');
+    await queryRunner.dropTable('user_module');
   }
 }

@@ -21,11 +21,11 @@ class FirstComponent extends React.Component {
 }
 \`\`\`
 
-Como é verificado, o componente é criado como uma classe do JavaScript, que extende do \`Reac.Component\`. A classe chama a função \`render()\`, que retorna dentro dela um HTML, que por meio de JSX pode ser alterado. 
+Como é verificado, o componente é criado como uma classe do JavaScript, que extende do \`Reac.Component\`. A classe chama a função \`render()\`, que retorna dentro dela um HTML, que por meio de JSX pode ser alterado.
 
 Um componente pode ser exportado para que seja utilizado em outros locais da aplicação, realizando as alterações necessárias ao utilizar o \`export default\` antes da declaração da classe.
 
-Um componente pode ser uma função, que retornará um conjunto de tags HTML. Esse tipo de componente é chamado de **componente de função**. 
+Um componente pode ser uma função, que retornará um conjunto de tags HTML. Esse tipo de componente é chamado de **componente de função**.
 
 Um componente pode abranger outro componente para realizar a renderização, de forma que há um componente pai e um componente filho. O primeiro é o que irá abranger o segundo e passar atributos e valores para ele.
 
@@ -35,7 +35,7 @@ import Child from "./ChildComponent";
 
 class FatherComponent extends  React.Component  {
   render()  {
-  return  
+  return
     <h1>O componente será renderizado a seguir
       <Child>
       </Child>
@@ -46,10 +46,19 @@ class FatherComponent extends  React.Component  {
 
 `,
     links: `
-    [Documentação Componentes](https://reactjs.org/docs/state-and-lifecycle.html)
-    [Documentação JSX](https://reactjs.org/docs/introducing-jsx.html)
-    [Rocketseat componentes, propriedades e estado](https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/)
-    `,
+# Referencias para estudo
+
+Componentes e JSX
+[Documentação Componentes](https://reactjs.org/docs/state-and-lifecycle.html)
+
+
+[Documentação JSX](https://reactjs.org/docs/introducing-jsx.html)
+
+
+Artigos de Blog
+[Rocketseat componentes, propriedades e estado](https://blog.rocketseat.com.br/react-do-zero-componentizacao-propriedades-e-estado/)
+
+`,
     level_id: '2dc5612e-3c08-11ec-a9e6-57ab74ea2403',
     technology_id: '2dc562f0-3c08-11ec-a9e9-e336ecaf21cf',
   },

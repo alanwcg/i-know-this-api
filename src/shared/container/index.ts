@@ -13,8 +13,10 @@ import { TechnologyRepository } from '@modules/technologies/infra/typeorm/reposi
 import { ILevelRepository } from '@modules/technologies/repositories/ILevelRepository';
 import { IModuleRepository } from '@modules/technologies/repositories/IModuleRepository';
 import { ITechnologyRepository } from '@modules/technologies/repositories/ITechnologyRepository';
+import { UsersModulesRepository } from '@modules/users/infra/typeorm/repositories/UsersModulesRepository';
 import { UsersRepository } from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import { UsersTokensRepository } from '@modules/users/infra/typeorm/repositories/UsersTokensRepository';
+import { IUsersModulesRepository } from '@modules/users/repositories/IUsersModulesRepository';
 import { IUsersRepository } from '@modules/users/repositories/IUsersRepository';
 import { IUsersTokensRepository } from '@modules/users/repositories/IUsersTokensRepository';
 
@@ -27,6 +29,11 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IUsersTokensRepository>(
   'UsersTokensRepository',
   UsersTokensRepository,
+);
+
+container.registerSingleton<IUsersModulesRepository>(
+  'UsersModulesRepository',
+  UsersModulesRepository,
 );
 
 // Technology

@@ -32,7 +32,15 @@ moduleRouter.post(
   createModuleController.handle,
 );
 
-moduleRouter.get('/', listModuleController.handle);
+moduleRouter.get(
+  '/',
+  celebrate({
+    [Segments.QUERY]: {
+      technology_id: Joi.string().uuid().allow(''),
+    },
+  }),
+  listModuleController.handle,
+);
 
 moduleRouter.get(
   '/:id',

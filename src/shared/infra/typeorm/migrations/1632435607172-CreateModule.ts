@@ -26,6 +26,10 @@ export class CreateModule1632435607172 implements MigrationInterface {
             type: 'text',
           },
           {
+            name: 'links',
+            type: 'text',
+          },
+          {
             name: 'technology_id',
             type: 'uuid',
             isNullable: true,
@@ -33,11 +37,6 @@ export class CreateModule1632435607172 implements MigrationInterface {
           {
             name: 'level_id',
             type: 'uuid',
-            isNullable: true,
-          },
-          {
-            name: 'links',
-            type: 'varchar',
             isNullable: true,
           },
           {

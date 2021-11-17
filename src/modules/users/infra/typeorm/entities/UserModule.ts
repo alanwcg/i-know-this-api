@@ -11,12 +11,12 @@ import {
 } from 'typeorm';
 
 import { Level } from '@modules/technologies/infra/typeorm/entities/Level';
-import { Technology } from '@modules/technologies/infra/typeorm/entities/Technology';
+import { Module } from '@modules/technologies/infra/typeorm/entities/Module';
 
 import { User } from './User';
 
-@Entity('user_technology')
-export class UserTechnology {
+@Entity('user_module')
+export class UserModule {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -24,12 +24,12 @@ export class UserTechnology {
   user_id: string;
 
   @Column('uuid')
-  technology_id: string;
+  module_id: string;
 
   @Column('uuid')
   level_id: string;
 
-  @Column('decimal')
+  @Column('integer')
   progression: number;
 
   @Exclude()
@@ -44,15 +44,15 @@ export class UserTechnology {
   @DeleteDateColumn()
   deleted_at: Date;
 
-  @ManyToOne(() => User, user => user.userTechnologies)
+  @ManyToOne(() => User, user => user.userModules)
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Technology, technology => technology.userTechnologies)
-  @JoinColumn({ name: 'technology_id' })
-  technology: Technology;
+  @ManyToOne(() => Module, module => module.userModules)
+  @JoinColumn({ name: 'module_id' })
+  module: Module;
 
-  @ManyToOne(() => Level, level => level.userTechnologies)
+  @ManyToOne(() => Level, level => level.userModules)
   @JoinColumn({ name: 'level_id' })
   level: Level;
 }

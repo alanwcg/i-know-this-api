@@ -12,6 +12,7 @@ import {
 } from 'typeorm';
 
 import { Question } from '@modules/quizzes/infra/typeorm/entities/Question';
+import { UserModule } from '@modules/users/infra/typeorm/entities/UserModule';
 import { UserQuiz } from '@modules/users/infra/typeorm/entities/UserQuiz';
 
 import { Level } from './Level';
@@ -57,7 +58,9 @@ export class Module {
   @JoinColumn({ name: 'level_id' })
   level: Level;
 
-  @ManyToOne(() => Technology, technology => technology.modules)
+  @ManyToOne(() => Technology, technology => technology.modules, {
+    eager: true,
+  })
   @JoinColumn({ name: 'technology_id' })
   technology: Technology;
 
@@ -69,4 +72,7 @@ export class Module {
 
   @OneToMany(() => UserQuiz, userQuiz => userQuiz.module)
   userQuizzes: UserQuiz[];
+
+  @OneToMany(() => UserModule, userModule => userModule.module, { eager: true })
+  userModules: UserModule[];
 }
