@@ -7,7 +7,7 @@ import { getConnection } from '..';
 
 import { PopulateLevel } from './level';
 import { PopulateModule } from './module';
-import { PopulateQuestionAndOption } from './question';
+import { PopulateQuestionAndOption } from './questionAndOption';
 import { PopulateTechnology } from './technology';
 
 const populateMethodsArray = async (
@@ -45,7 +45,6 @@ async function runSeed() {
     .catch(async error => {
       await queryRunner.rollbackTransaction();
       console.log('\nErro ao popular o banco de dados:\n', error);
-      // throw error;
     })
     .finally(async () => {
       await queryRunner.release();

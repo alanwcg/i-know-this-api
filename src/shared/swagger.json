@@ -11,7 +11,9 @@
   "paths": {
     "/users": {
       "post": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Create User",
         "description": "Create a new User",
         "requestBody": {
@@ -40,11 +42,15 @@
     },
     "users/{id}": {
       "put": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Update User",
         "description": "Update User",
         "security": [
-          { "bearerAuth": [] }
+          {
+            "bearerAuth": []
+          }
         ],
         "parameters": [
           {
@@ -73,7 +79,7 @@
               },
               "example": {
                 "name": "Alan Cintra Gomes",
-                "email":"alancintra7@gmail.com"
+                "email": "alancintra7@gmail.com"
               }
             }
           }
@@ -100,11 +106,15 @@
     },
     "/users/me": {
       "get": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Logged User Data",
         "description": "Logged User Data",
         "security": [
-          { "bearerAuth": [] }
+          {
+            "bearerAuth": []
+          }
         ],
         "responses": {
           "200": {
@@ -128,11 +138,15 @@
     },
     "/users/avatar": {
       "patch": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Update User Avatar",
         "description": "Update User Avatar",
         "security": [
-          { "bearerAuth": [] }
+          {
+            "bearerAuth": []
+          }
         ],
         "requestBody": {
           "content": {
@@ -161,7 +175,9 @@
     },
     "/sessions/authenticate": {
       "post": {
-        "tags": ["Session"],
+        "tags": [
+          "Session"
+        ],
         "summary": "Authenticate",
         "description": "Authenticate",
         "requestBody": {
@@ -197,7 +213,9 @@
     },
     "/sessions/refresh-token": {
       "post": {
-        "tags": ["Session"],
+        "tags": [
+          "Session"
+        ],
         "summary": "Refresh Token",
         "description": "Refresh Token",
         "requestBody": {
@@ -226,7 +244,9 @@
     },
     "/password/forgot": {
       "post": {
-        "tags": ["Password"],
+        "tags": [
+          "Password"
+        ],
         "summary": "Send Forgot Password Mail",
         "description": "Send Forgot Password Mail",
         "requestBody": {
@@ -258,7 +278,9 @@
     },
     "/password/reset": {
       "post": {
-        "tags": ["Password"],
+        "tags": [
+          "Password"
+        ],
         "summary": "Reset User Password",
         "description": "Reset User Password",
         "parameters": [
@@ -302,33 +324,114 @@
         }
       }
     },
-        "/questions": {
-          "post": {
-            "tags": [
-              "Question"
-            ],
-            "summary": "Create Question",
-            "description": "Create a new Question",
-            "requestBody": {
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/definitions/Question"
-                  },
-                  "example": {
-                    "text": "Questão de teste",
-                    "module_id": "8e23af72-12f1-4179-8ac9-46dc624659ea"
-                  }
-                }
-              }
-            },
-            "responses": {
-              "201": {
-                "description": "Created"
+    "/questions": {
+      "post": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Create Question",
+        "description": "Create a new Question",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Question"
+              },
+              "example": {
+                "text": "Questão de teste",
+                "module_id": "8e23af72-12f1-4179-8ac9-46dc624659ea"
               }
             }
           }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
         }
+      }
+    },
+    "/modules": {
+      "post": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "Create Option",
+        "description": "Create a new Option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Option"
+              },
+              "example": {
+                "text": "Questão de teste",
+                "question_id": "74c0fc12-66b9-4810-b797-28b7244231c8"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/technologies": {
+      "post": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "Create Option",
+        "description": "Create a new Option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Option"
+              },
+              "example": {
+                "text": "Questão de teste",
+                "question_id": "74c0fc12-66b9-4810-b797-28b7244231c8"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/options": {
+      "post": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "Create Option",
+        "description": "Create a new Option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Option"
+              },
+              "example": {
+                "text": "Questão de teste",
+                "question_id": "74c0fc12-66b9-4810-b797-28b7244231c8"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
   },
   "definitions": {
     "User": {
@@ -348,6 +451,93 @@
         "name",
         "email",
         "password"
+      ]
+    },
+    "Technology": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "Module": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "links": {
+          "type": "string"
+        },
+        "level_id": {
+          "type": "string"
+        },
+        "technology_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "content",
+        "links",
+        "level_id",
+        "technology_id"
+      ]
+    },
+    "Level": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "Question": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "module_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "module_id"
+      ]
+    },
+    "Option": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "question_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "question_id"
       ]
     }
   },

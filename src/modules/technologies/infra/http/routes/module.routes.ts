@@ -4,6 +4,7 @@ import { Router } from 'express';
 import { CreateModuleController } from '@modules/technologies/services/module/create/CreateModuleController';
 import { DeleteModuleController } from '@modules/technologies/services/module/delete/DeleteModuleController';
 import { DetailModuleController } from '@modules/technologies/services/module/detail/DetailModuleController';
+import { ListModuleByTechnologyIdController } from '@modules/technologies/services/module/list/ListModuleByTechnologyIdController';
 import { ListModuleController } from '@modules/technologies/services/module/list/ListModuleController';
 import { UpdateModuleController } from '@modules/technologies/services/module/update/UpdateModuleController';
 
@@ -14,6 +15,8 @@ const listModuleController = new ListModuleController();
 const detailModuleController = new DetailModuleController();
 const updateModuleController = new UpdateModuleController();
 const deleteModuleController = new DeleteModuleController();
+const listModuleByTechnologyIdController =
+  new ListModuleByTechnologyIdController();
 
 moduleRouter.post(
   '/',
@@ -39,6 +42,16 @@ moduleRouter.get(
     },
   }),
   detailModuleController.handle,
+);
+
+moduleRouter.get(
+  '/technology_id/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  listModuleByTechnologyIdController.handle,
 );
 
 moduleRouter.put(

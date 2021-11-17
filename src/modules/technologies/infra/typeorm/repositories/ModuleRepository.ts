@@ -20,6 +20,10 @@ export class ModuleRepository implements IModuleRepository {
     const item = await this.repository.findOne(id);
     return item;
   }
+  async findByTechnologyId(id: string): Promise<Module[]> {
+    const list = await this.repository.find({ where: { technology_id: id } });
+    return list;
+  }
   async update(data: IUpdateModuleDto): Promise<Module> {
     const updated = await this.repository.save(data);
     return updated;

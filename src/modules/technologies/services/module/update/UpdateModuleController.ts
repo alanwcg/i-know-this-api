@@ -7,7 +7,7 @@ import { UpdateModuleService } from './UpdateModuleService';
 export class UpdateModuleController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
-    const { name, description, content, level_id, technology_id } =
+    const { name, description, content, links, level_id, technology_id } =
       request.body;
 
     const service = container.resolve(UpdateModuleService);
@@ -17,6 +17,7 @@ export class UpdateModuleController {
       name,
       description,
       content,
+      links,
       level_id,
       technology_id,
     });

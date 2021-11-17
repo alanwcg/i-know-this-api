@@ -17,6 +17,7 @@ export class UpdateModuleService {
     name,
     description,
     content,
+    links,
     level_id,
     technology_id,
   }: IUpdateModuleDto): Promise<Module> {
@@ -31,6 +32,7 @@ export class UpdateModuleService {
       name,
       description,
       content,
+      links,
       level_id,
       technology_id,
     });
