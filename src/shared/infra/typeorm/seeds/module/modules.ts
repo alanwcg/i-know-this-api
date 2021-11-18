@@ -114,13 +114,13 @@ No exemplo abaixo, é criado um array, com o valor e a função, que serão atri
 import React, { useState } from "react";
 
 export function Tabela() {
-  const [celula, setCelula] = useState('vazia');
+  const [celula, setCelula] = useState("vazia");
 
   return (
     <div>
       <h1>Tabela</h1>
       <h2>{celula}</h2>
-      <button onClick={() => setCelula('preenchida')}>
+      <button onClick={() => setCelula("preenchida")}>
         Preencher
       </button>
     </div>
