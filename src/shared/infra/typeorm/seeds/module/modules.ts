@@ -143,8 +143,8 @@ Nesse exemplo, é criado um botão que ao ser acionado, irá chamar a função d
     description:
       'Nesse módulo será explicado o que é o conceito de Imutabilidade',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -158,7 +158,7 @@ Nesse exemplo, é criado um botão que ao ser acionado, irá chamar a função d
       'Nesse módulo será explicado o que são Propriedades e como são usadas para passar dados de um componente para outro',
     content: `
 -----
-TODO:
+TODO
     `,
     links: `
       `,
@@ -171,8 +171,8 @@ TODO:
     description:
       'Nesse módulo será explicado como é feito para que seja inserido e utilizado o CSS dentro do JavaScript',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -185,8 +185,8 @@ TODO:
     description:
       'Nesse módulo serão abordados os conceitos de Hooks, novidade que chegou ao React na versão 16.8.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -199,8 +199,8 @@ TODO:
     description:
       'Nesse módulo será explicado como passar dados com o Contexto, sem a necessidade de Propriedades sendo passadas de componente para componente',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -213,8 +213,8 @@ TODO:
     description:
       'Nesse módulo será explicado como implementar a navegação dentro de uma aplicação React.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -227,8 +227,8 @@ TODO:
     description:
       'Nesse módulo serão abordadas formas de implementar conceitos de Autenticação dentro da aplicação, utilizando Contexto e outras práticas.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -241,8 +241,8 @@ TODO:
     description:
       'Nesse módulo serão explicados conceitos de Interface Declarativa',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -255,8 +255,8 @@ TODO:
     description:
       'Nesse módulo será demonstrado como aplicar estratégias de Cache para as aplicações.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -269,8 +269,8 @@ TODO:
     description:
       'Nesse módulo serão abordadas práticas para incrementar a Performance da aplicação.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
@@ -283,8 +283,8 @@ TODO:
     description:
       'Nesse módulo será descrito como realizar Testes de aplicações React.',
     content: `
-    -----
-    TODO
+-----
+TODO
     `,
     links: `
       `,
