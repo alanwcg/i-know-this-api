@@ -33,11 +33,12 @@ import Child from "./ChildComponent";
 
 class FatherComponent extends  React.Component  {
   render()  {
-    return
-    <h1>O componente será renderizado a seguir
-    <Child>
-    </Child>
-    </h1>;
+    return(
+      <h1>O componente será renderizado a seguir
+        <Child>
+        </Child>
+      </h1>
+    );
   }
 }
 \`\`\`
@@ -133,6 +134,8 @@ Nesse exemplo, é criado um botão que ao ser acionado, irá chamar a função d
   `,
     links: `
       [Estado da aplicação](https://reactjs.org/docs/state-and-lifecycle.html)
+      [State Hooke](https://reactjs.org/docs/hooks-state.html)
+      [Component State](https://reactjs.org/docs/faq-state.html)
       `,
     level_id: '2dc5612e-3c08-11ec-a9e6-57ab74ea2403',
     technology_id: '2dc562f0-3c08-11ec-a9e9-e336ecaf21cf',

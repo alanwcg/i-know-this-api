@@ -188,11 +188,57 @@ export const questions = [
       },
     ],
   },
+  {
+    id: '5fc83097-ea4c-4a1f-b502-11bd8ca15dc3',
+    text: 'Selecione a afirmação correta sobre estado de componentes.',
+    module_id: 'debdd9a6-3a4e-491e-9770-1a1754c69222', // id modulo de Estado - React - junior
+    options: [
+      {
+        text: 'Um componente só pode possuir uma variável para armazenar o seu estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente deve possuir ao menos uma variável de estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente pode ou não ter variáveis de estado para diferentes objetivos.',
+        correct_answer: true,
+      },
+      {
+        text: 'Um componente deve sempre utilizar props para armazenar o estado.',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: '3d5970fb-7bce-45a0-91de-8a59f346b772',
+    text: 'Sobre estados, selecione a alternativa correta.',
+    module_id: 'debdd9a6-3a4e-491e-9770-1a1754c69222', // id modulo de Estado - React - junior
+    options: [
+      {
+        text: 'Uma variável de estado deve armazenar uma string.',
+        correct_answer: false,
+      },
+      {
+        text: 'Uma variável de estado pode armazenar diversos tipos de dado.',
+        correct_answer: true,
+      },
+      {
+        text: 'Uma variável de estado só pode armazenar um objeto',
+        correct_answer: false,
+      },
+      {
+        text: 'Uma variável de estado pode ser acessada por outro componente que não o seu.',
+        correct_answer: false,
+      },
+    ],
+  },
 
   /* -------- COMPONENTE --------- */
   {
     id: '6a1d4d5e-3b32-49dd-970b-093570e6a015',
-    text: 'Sobre componentes responda. Qual dessas acertivas está correta?',
+    text: 'Sobre componentes responda. Qual das acertivas abaixo está correta?',
     module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
     options: [
       {
@@ -255,6 +301,167 @@ export const questions = [
       },
       {
         text: 'Um componente filho pode usar funções do componente pai desde está tenha sido passada através das props',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: '1b9337a6-096f-48a9-b8e0-af1c20fac5f6',
+    text: 'Sobre a Hierarquia de componentes dentro de uma aplicação, qual das alternativas abaixo está correta?',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'Não é necessário fazer a importação de um componente filho, uma vez que durante a sua chamada já é realizada a importação automaticamente.',
+        correct_answer: false,
+      },
+      {
+        text: 'Para que dois componentes fiquem no mesmo nível de hierarquia, é necessário criar uma div <main> que englobe ambos.',
+        correct_answer: false,
+      },
+      {
+        text: 'Para que dois componentes fiquem no mesmo nível de hierarquia, é necessário que eles estejam dentro de um mesmo componente, div ou dentro de um fragment "</>".',
+        correct_answer: true,
+      },
+      {
+        text: 'É necessário que haja um componente ao redor de dois componentes dentro da mesma hierarquia para que eles sejam renderizados.',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: '3eef4d23-1960-409e-b505-82c09c279675',
+    text: 'Sobre a divisão de componentes, selecione a afirmação correta.',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'Não é recomendado dividir um componente pois ao fazê-lo, aumentaria o trabalho de manutenção de código.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente pode ser dividido em vários outros para facilitar não só a manutenção de código, mas auxiliar no processo aplicar o conceito de componentização.',
+        correct_answer: true,
+      },
+      {
+        text: 'Um componente deve ser sempre dividido para que cada componente só possua uma única função e um estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente precisa que a sua divisão seja realizada para que só exista um tipo de tag html dentro dele.',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: '6498742c-2d22-4f5f-bea6-1c0071f66212',
+    text: 'Sobre o estado e um componente selecione a opção correta.',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'Um componente de função sempre precisa iniciar pelo menos um estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente de estado sempre precisa iniciar pelo menos um estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente de função não pode possuir um estado.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente de função pode ou não iniciar um estado.',
+        correct_answer: true,
+      },
+    ],
+  },
+  {
+    id: 'bd159c60-a44d-44ed-ab88-fc8c50104595',
+    text: 'Sobre componentes, qual a afirmação correta?',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'Um componente é sempre chamado como um objeto, tendo um atributo html para renderização.',
+        correct_answer: false,
+      },
+      {
+        text: 'Ao chamar um componente, o mesmo precisa sempre ter uma abertura e um fechamento.',
+        correct_answer: false,
+      },
+      {
+        text: 'Um componente é chamado de forma similar a uma tag html, podendo ter uma tag fechamento.',
+        correct_answer: true,
+      },
+      {
+        text: 'Um componente precisa sempre ser instanciado chamando o seu construtor para que seja utilizado dentro da aplicação.',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: '52f26a66-1c5e-4c1d-b1d0-eaf55fc2938f',
+    text: 'Qual das seguintes formas a seguir é a correta para chamar um componente, considerando que o mesmo já foi importado.',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: '<ComponenteTeste/>',
+        correct_answer: true,
+      },
+      {
+        text: '<componenteTeste/>',
+        correct_answer: false,
+      },
+      {
+        text: 'componente = <Teste/>',
+        correct_answer: false,
+      },
+      {
+        text: '<Componente Teste/>',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: 'a3adaec8-a38c-4533-ad26-00f282949b7c',
+    text: 'Qual a forma correta de criar um componente de classe, de forma que o mesmo já seja exportado?',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'export default class ComponenteTeste extends React.Component {}',
+        correct_answer: true,
+      },
+      {
+        text: 'default class export ComponenteTeste extends React.Component {}',
+        correct_answer: false,
+      },
+      {
+        text: 'export ComponenteTeste extends React.Component {}',
+        correct_answer: false,
+      },
+      {
+        text: 'export default class ComponenteTeste {}',
+        correct_answer: false,
+      },
+    ],
+  },
+  {
+    id: 'b0ad4236-9a00-4c60-8716-d5488b4a662a',
+    text: 'Para renderizar o conteúdo de um componente de função, qual a função que deve ser chamada?',
+    module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
+    options: [
+      {
+        text: 'renderContent()',
+        correct_answer: false,
+      },
+      {
+        text: 'return()',
+        correct_answer: true,
+      },
+      {
+        text: 'renders()',
+        correct_answer: false,
+      },
+      {
+        text: 'render{}',
         correct_answer: false,
       },
     ],
