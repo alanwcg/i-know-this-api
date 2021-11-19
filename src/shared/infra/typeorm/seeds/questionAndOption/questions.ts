@@ -75,7 +75,7 @@ export const questions = [
   },
   {
     id: '18cf635a-751a-4983-816a-f5069d208ca7',
-    text: 'Qual dessas acertivas está correta?',
+    text: 'Qual dessas assertivas está correta?',
     module_id: 'debdd9a6-3a4e-491e-9770-1a1754c69222', // id modulo de Estado - React - junior
     options: [
       {
@@ -98,7 +98,7 @@ export const questions = [
   },
   {
     id: '89263566-1b5b-4391-aaf2-351cdb999bc3',
-    text: 'Quando um estado é definido, também é criado uma função que tem por responsabilidade acessar e alterar o seu valor. Um estado foi definido para alterar o valor de uma cor após o pressionamento de um botão. Analize os seguintes trechos e selecione a forma correta de alterar o valor do estado.',
+    text: 'Quando um estado é definido, também é criada uma função que tem por responsabilidade acessar e alterar o seu valor. Um estado foi definido para alterar o valor de uma cor após o pressionamento de um botão. Analise os seguintes trechos e selecione a forma correta de alterar o valor do estado.',
     module_id: 'debdd9a6-3a4e-491e-9770-1a1754c69222', // id modulo de Estado - React - junior
     options: [
       {
@@ -171,7 +171,7 @@ export const questions = [
     module_id: 'debdd9a6-3a4e-491e-9770-1a1754c69222', // id modulo de Estado - React - junior
     options: [
       {
-        text: 'Uma variável que recebe o valor inicial do estado e uma função que acessa apenas lê esse valor.',
+        text: 'Uma variável que recebe o valor inicial do estado e uma função que apenas lê esse valor.',
         correct_answer: false,
       },
       {
@@ -183,7 +183,7 @@ export const questions = [
         correct_answer: false,
       },
       {
-        text: 'Uma variável que recebe o valor do estado e uma função que acessa e altera esse valor.',
+        text: 'Uma variável que recebe o valor do estado e uma função que altera esse valor.',
         correct_answer: true,
       },
     ],
@@ -238,7 +238,7 @@ export const questions = [
   /* -------- COMPONENTE --------- */
   {
     id: '6a1d4d5e-3b32-49dd-970b-093570e6a015',
-    text: 'Sobre componentes responda. Qual das acertivas abaixo está correta?',
+    text: 'Sobre componentes responda: Qual das assertivas abaixo está correta?',
     module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
     options: [
       {
@@ -246,7 +246,7 @@ export const questions = [
         correct_answer: true,
       },
       {
-        text: 'Um componente deve ser escrito com sua letra inicial em minusculo',
+        text: 'Um componente deve ser escrito com sua letra inicial minúscula',
         correct_answer: false,
       },
       {
@@ -261,7 +261,7 @@ export const questions = [
   },
   {
     id: 'b1b034a5-50f4-4a44-b1cd-797e8d171a63',
-    text: 'Sobre componentes responda. Qual dessas acertivas está Incorreta?',
+    text: 'Sobre componentes responda: Qual dessas assertivas está INCORRETA?',
     module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
     options: [
       {
@@ -269,7 +269,7 @@ export const questions = [
         correct_answer: true,
       },
       {
-        text: 'Um componente deve ser escrito com sua letra inicial em maiúscula',
+        text: 'Um componente deve ser escrito com sua letra inicial maiúscula',
         correct_answer: false,
       },
       {
@@ -284,7 +284,7 @@ export const questions = [
   },
   {
     id: '1c9d2f48-b062-4a01-ab6a-31197bfabf20',
-    text: 'Qual dessas acertivas está incorreta?',
+    text: 'Qual dessas assertivas está incorreta?',
     module_id: 'c904770b-e610-4d35-bb3c-ad23d8df2104', // id modulo de Componentes - React - junior
     options: [
       {
@@ -300,7 +300,7 @@ export const questions = [
         correct_answer: false,
       },
       {
-        text: 'Um componente filho pode usar funções do componente pai desde está tenha sido passada através das props',
+        text: 'Um componente filho pode usar funções do componente pai desde estas tenham sido passadas através das props',
         correct_answer: false,
       },
     ],
@@ -338,7 +338,7 @@ export const questions = [
         correct_answer: false,
       },
       {
-        text: 'Um componente pode ser dividido em vários outros para facilitar não só a manutenção de código, mas auxiliar no processo aplicar o conceito de componentização.',
+        text: 'Um componente pode ser dividido em vários outros para facilitar não só a manutenção de código, mas auxiliar no processo de aplicar o conceito de componentização.',
         correct_answer: true,
       },
       {
@@ -470,7 +470,7 @@ export const questions = [
   /* -------- PROPRIEDADES --------- */
   {
     id: '00d3ac7f-8ddb-4316-8cbb-224888aa1f48',
-    text: 'Sobre propriedades responda. Qual dessas acertivas está incorreta?',
+    text: 'Sobre propriedades responda: qual dessas assertivas está incorreta?',
     module_id: '032a7d8e-e552-4616-b63b-468f24fa3ae6', // id modulo de Propriedades - React - junior
     options: [
       {
@@ -493,7 +493,7 @@ export const questions = [
   },
   {
     id: '8c02dcad-ea0e-4dfe-ae2f-a6b80bc94b4b',
-    text: 'Qual dessas acertivas está correta?',
+    text: 'Qual dessas assertivas está correta?',
     module_id: '032a7d8e-e552-4616-b63b-468f24fa3ae6', // id modulo de Propriedades - React - junior
     options: [
       {
@@ -518,7 +518,7 @@ export const questions = [
   /* -------- IMUTABILIDADE --------- */
   {
     id: '8c8d6fe3-4977-407b-82b9-102c5934529b',
-    text: 'Sobre imutabilidade. Qual dessas acertivas está correta?',
+    text: 'Sobre imutabilidade. Qual dessas assertivas está correta?',
     module_id: 'e068b35c-b171-48ac-afed-44adc9a0e406', // id modulo de Imutabilidade - React - junior
     options: [
       {

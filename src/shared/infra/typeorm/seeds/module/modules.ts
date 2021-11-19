@@ -5,10 +5,10 @@ const modules = [
     description:
       'Nesse módulo será explicado o que é e como são usados componentes dentro uma aplicação React',
     content: `
-Componentes são a ferramenta mais importante para o desenvolvimento de aplicações React. Para entender o conceito inicial, o componente é um trecho de código que abrange dentro dele estruturas de lógica, renderização e estilização. A parte lógica é criada utilizando o JavaScript, enquanto a parte de renderização é feita utilizando o HTML e JSX. Quando presente, a estilização é feita utilizando CSS.
+Componentes constituem a ferramenta mais importante para o desenvolvimento de aplicações React. Para entender o conceito inicial, o componente é um trecho de código que abrange dentro dele estruturas de lógica, renderização e estilização. A parte lógica é criada utilizando o JavaScript, enquanto a parte de renderização é feita utilizando o HTML e JSX. Quando presente, a estilização é feita utilizando CSS.
 
 O que é o JSX?
-JSX é um extensão de sintaxe do JavaScript, utilizada dentro das aplicações React para auxiliar o desenvolvimento. Com ele é possível realizar a "mistura" de JavaScript, HTML.
+JSX é um extensão de sintaxe do JavaScript, utilizada dentro das aplicações React para auxiliar o desenvolvimento. Com ele é possível realizar a "mistura" de JavaScript e HTML.
 
 Criando um componente chamado \`FirstComponent\` no  React:
 \`\`\`js
@@ -20,7 +20,7 @@ class FirstComponent extends React.Component {
 }
 \`\`\`
 
-Como é verificado, o componente é criado como uma classe do JavaScript, que extende do \`Reac.Component\`. A classe chama a função \`render()\`, que retorna dentro dela um HTML, que por meio de JSX pode ser alterado.
+Como é verificado, o componente é criado como uma classe do JavaScript, que estende do \`Reac.Component\`. A classe chama a função \`render()\`, que retorna dentro dela um HTML, que por meio de JSX pode ser alterado.
 
 Um componente pode ser exportado para que seja utilizado em outros locais da aplicação, realizando as alterações necessárias ao utilizar o \`export default\` antes da declaração da classe.
 
@@ -44,7 +44,7 @@ class FatherComponent extends  React.Component  {
 \`\`\`
 
 Um componente pode ser uma função, que retornará um conjunto de tags HTML. Esse tipo de componente é chamado de **componente de função**.
-Atualmente este é o tipo mais utilizado de componentes dentro do desenvolvimento de aplicações React. Isso se dá principalmente pela chegada de novas funções para manipular os dados da aplicação, como o useCallback, useEffect, useMemo, useRef, useState, etc. Esse tipo de componente não possui estado nem precisa da função \`render()\`.
+Atualmente este é o tipo mais utilizado de componente dentro do desenvolvimento de aplicações React. Isso se dá principalmente pela chegada de novas funções para manipular os dados da aplicação, como o useCallback, useEffect, useMemo, useRef, useState, etc. Esse tipo de componente não possui estado nem precisa da função \`render()\`.
 
 Apresentando o componente de função:
 
@@ -84,9 +84,9 @@ Em um exemplo mais simples ainda, um relógio, onde o estado é a variável que 
 
 Uma das principais diferenças para aqueles que estão começando a entender React é que o estado é acessível apenas dentro do seu componente. Diferentemente das propriedades, que podem ser passadas seguindo a hierarquia de implementação.
 
-Para que a aplicação entenda o uso do estado, é necessário que o mesmo seja definido. Graças as últimas atualizações da biblioteca, a implementação do estado pode ser feita de diversas formas. Uma das formas de um estado ser definido é realizar a atribuição do estado dentro do construtor de uma classe que extende do componente \`React.Component\`.
+Para que a aplicação entenda o uso do estado, é necessário que o mesmo seja definido. Graças às últimas atualizações da biblioteca, a implementação do estado pode ser feita de diversas formas. Uma das formas de um estado ser definido é realizar a atribuição do estado dentro do construtor de uma classe que estende do componente \`React.Component\`.
 
-Ex retirado da doumentação oficial do [React](https://pt-br.reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).:
+Exemplo retirado da doumentação oficial do [React](https://pt-br.reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class):
 
 \`\`\`js
 class Clock extends React.Component {
@@ -133,9 +133,9 @@ Nesse exemplo, é criado um botão que ao ser acionado, irá chamar a função d
 
   `,
     links: `
-      [Estado da aplicação](https://reactjs.org/docs/state-and-lifecycle.html)
-      [State Hooke](https://reactjs.org/docs/hooks-state.html)
-      [Component State](https://reactjs.org/docs/faq-state.html)
+[Estado da aplicação](https://reactjs.org/docs/state-and-lifecycle.html)
+[State Hooke](https://reactjs.org/docs/hooks-state.html)
+[Component State](https://reactjs.org/docs/faq-state.html)
       `,
     level_id: '2dc5612e-3c08-11ec-a9e6-57ab74ea2403',
     technology_id: '2dc562f0-3c08-11ec-a9e9-e336ecaf21cf',
